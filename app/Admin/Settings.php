@@ -161,14 +161,14 @@ class Settings {
 		} else {
 			wp_enqueue_style(
 				'social-linker-admin',
-				SOCIAL_LINKER_PLUGIN_URL . 'assets/css/admin.css',
+				SOCIAL_LINKER_PLUGIN_URL . 'assets/styles/admin.css',
 				[],
 				SOCIAL_LINKER_VERSION
 			);
 
 			wp_enqueue_script(
 				'social-linker-admin',
-				SOCIAL_LINKER_PLUGIN_URL . 'assets/js/admin.js',
+				SOCIAL_LINKER_PLUGIN_URL . 'assets/scripts/admin.js',
 				[ 'jquery', 'jquery-ui-sortable', 'wp-util' ],
 				SOCIAL_LINKER_VERSION,
 				true
