@@ -2,6 +2,13 @@
 
 WordPress plugin for displaying social media links in a floating box.
 
+## Demo
+
+URL: https://phobicshake.s6-tastewp.com/
+Admin URL: https://phobicshake.s6-tastewp.com/wp-admin
+Username: yarops
+Password: FdVITwj3OyE
+
 ## Features
 
 - Floating box with social media links
