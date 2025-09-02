@@ -1,0 +1,41 @@
+{
+    "name": "yarops/social-linker",
+    "description": "WordPress plugin for social links in a floating box",
+    "type": "wordpress-plugin",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Yaroslav Popov",
+            "email": "ed.creater@example.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "require": {
+        "php": ">=8.2"
+    },
+    "require-dev": {
+        "dealerdirect/phpcodesniffer-composer-installer": "^1.1",
+        "php-stubs/wordpress-stubs": "^6.8",
+        "squizlabs/php_codesniffer": "^3.13",
+        "wp-coding-standards/wpcs": "^3.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "SocialLinker\\": "app/"
+        }
+    },
+    "autoload-dev": {
+        "files": [
+            "vendor/php-stubs/wordpress-stubs/wordpress-stubs.php"
+        ]
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    }
+}

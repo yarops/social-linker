@@ -1,0 +1,176 @@
+/**
+ * Admin styles for Social Linker plugin.
+ */
+
+// Variables
+$color-primary: #0073aa;
+$color-secondary: #23282d;
+$color-border: #ddd;
+$color-background: #f9f9f9;
+$color-background-header: #f1f1f1;
+$color-text: #333;
+$border-radius: 3px;
+$spacing-small: 10px;
+$spacing-medium: 15px;
+$spacing-large: 20px;
+$spacing-xlarge: 30px;
+
+// Mixins
+@mixin box-shadow($shadow...) {
+    box-shadow: $shadow;
+}
+
+@mixin transition($transition...) {
+    transition: $transition;
+}
+
+// Main container
+.social-linker-settings {
+    max-width: 1200px;
+}
+
+// Settings sections
+.social-linker-main-settings,
+.social-linker-social-links {
+    margin-bottom: $spacing-xlarge;
+    background: #fff;
+    padding: $spacing-large;
+    border: 1px solid #ccd0d4;
+    @include box-shadow(0 1px 1px rgba(0, 0, 0, 0.04));
+}
+
+// Social links container
+.social-links-container {
+    margin-top: $spacing-large;
+}
+
+// Social link item
+.social-link-item {
+    border: 1px solid $color-border;
+    margin-bottom: $spacing-medium;
+    background: $color-background;
+    border-radius: $border-radius;
+    @include transition(all 0.2s ease);
+
+    &:hover {
+        @include box-shadow(0 2px 5px rgba(0, 0, 0, 0.1));
+    }
+}
+
+// Header of social link item
+.social-link-header {
+    padding: $spacing-small $spacing-medium;
+    background: $color-background-header;
+    border-bottom: 1px solid $color-border;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+
+    h3 {
+        margin: 0;
+        font-size: 14px;
+        font-weight: 600;
+    }
+}
+
+// Toggle switch
+.social-link-toggle {
+    display: flex;
+    align-items: center;
+}
+
+// Content of social link item
+.social-link-content {
+    padding: $spacing-medium;
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-medium;
+}
+
+// Field in social link item
+.social-link-field {
+    flex: 1;
+    min-width: 200px;
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: 500;
+    }
+
+    input[type="text"],
+    input[type="url"] {
+        width: 100%;
+    }
+}
+
+// Icon selector
+.social-icon-selector {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-small;
+}
+
+.social-icon-preview {
+    display: flex;
+    gap: $spacing-small;
+}
+
+.default-icon,
+.custom-icon {
+    width: 40px;
+    height: 40px;
+    border: 1px solid $color-border;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    font-size: 10px;
+    text-align: center;
+    padding: 5px;
+
+    img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+.social-icon-actions {
+    display: flex;
+    gap: $spacing-small;
+}
+
+// Action buttons
+.social-link-actions {
+    margin-top: $spacing-large;
+}
+
+.social-link-remove {
+    margin-top: $spacing-medium;
+    text-align: right;
+}
+
+// Sortable styles
+.ui-sortable-helper {
+    @include box-shadow(0 0 10px rgba(0, 0, 0, 0.1));
+}
+
+.ui-sortable-placeholder {
+    visibility: visible !important;
+    border: 2px dashed #ccc;
+    background: $color-background;
+    height: 100px;
+    margin-bottom: $spacing-medium;
+}
+
+.social-icon-selector {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: $spacing-small;
+}

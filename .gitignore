@@ -1,0 +1,55 @@
+# Composer
+/vendor/
+composer.lock
+
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+yarn-debug.log
+.pnp/
+.pnp.js
+pnpm-lock.yaml
+
+# IDE files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+.phpactor.json
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+*.log
+application.log
+
+# Build files
+# Uncomment if you want to ignore compiled assets
+# /assets/css/
+# /assets/js/
+
+# Environment
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Temporary files
+*.swp
+*.swo
+*.tmp
+*.bak
+*~
+
+# Test coverage
+/coverage/
+.phpunit.result.cache

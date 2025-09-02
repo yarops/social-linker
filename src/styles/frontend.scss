@@ -1,0 +1,222 @@
+/**
+ * Frontend styles for Social Linker plugin.
+ */
+
+// Variables
+$color-background: #fff;
+$color-text: #333;
+$color-toggle: #333;
+$color-toggle-hover: #555;
+$color-border: #eee;
+$border-radius: 5px;
+$transition-duration: 0.3s;
+$box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+$mobile-breakpoint: 768px;
+
+// Social network colors
+$color-vk: #4C75A3;
+$color-facebook: #3B5998;
+$color-instagram: #E4405F;
+$color-whatsapp: #25D366;
+$color-telegram: #0088CC;
+
+// Mixins
+@mixin transition($transition...) {
+    transition: $transition;
+}
+
+@mixin box-shadow($shadow...) {
+    box-shadow: $shadow;
+}
+
+.social-linker {
+    position: fixed;
+    z-index: 9999;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    @include transition(all $transition-duration ease);
+
+    &--position-left {
+        left: 0;
+
+        social-linker-toggle {
+            border-radius: 0 $border-radius $border-radius 0;
+            margin-left: 0;
+        }
+    }
+
+    &--position-right {
+        right: 0;
+        align-items: flex-end;
+
+        .social-linker-toggle {
+            border-radius: $border-radius 0 0 $border-radius;
+            margin-right: 0;
+        }
+    }
+}
+
+// Toggle button
+.social-linker-toggle {
+    width: 40px;
+    height: 40px;
+    background-color: $color-toggle;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-bottom: 10px;
+    @include transition(all $transition-duration ease);
+
+    &:hover {
+        background-color: $color-toggle-hover;
+    }
+}
+
+// Toggle icon
+.social-linker-toggle-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+        width: 20px;
+        height: 20px;
+        fill: #fff;
+    }
+}
+
+// Links container
+.social-linker-links {
+    display: flex;
+    flex-direction: column;
+    background-color: $color-background;
+    @include box-shadow($box-shadow);
+    border-radius: $border-radius;
+    overflow: hidden;
+    @include transition(all $transition-duration ease);
+    max-height: 0;
+    opacity: 0;
+}
+
+// Active state
+.social-linker.active .social-linker-links {
+    max-height: 500px;
+    opacity: 1;
+}
+
+// Links container positioning
+.social-linker--position-left .social-linker-links {
+    border-radius: 0 $border-radius $border-radius 0;
+}
+
+.social-linker--position-right .social-linker-links {
+    border-radius: $border-radius 0 0 $border-radius;
+}
+
+// Individual links
+.social-linker-link {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: $color-text;
+    @include transition(all $transition-duration ease);
+    border-bottom: 1px solid $color-border;
+    font-size: 1rem;
+
+    &:last-child {
+        border-bottom: none;
+    }
+
+    &:hover {
+        background-color: darken($color-background, 3%);
+    }
+}
+
+// Icons
+.social-linker-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.social-linker-link svg {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+// Social network colors
+.social-linker-vk svg {
+    fill: $color-vk;
+}
+
+.social-linker-facebook svg {
+    fill: $color-facebook;
+}
+
+.social-linker-instagram svg {
+    fill: $color-instagram;
+}
+
+.social-linker-whatsapp svg {
+    fill: $color-whatsapp;
+}
+
+.social-linker-telegram svg {
+    fill: $color-telegram;
+}
+
+// Mobile styles
+@media screen and (max-width: $mobile-breakpoint) {
+    .social-linker {
+        top: auto;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        transform: none;
+        flex-direction: row;
+        justify-content: center;
+        background-color: $color-background;
+        @include box-shadow(0 -2px 10px rgba(0, 0, 0, 0.1));
+    }
+
+    .social-linker-toggle {
+        display: none;
+    }
+
+    .social-linker-links {
+        flex-direction: row;
+        max-height: none;
+        opacity: 1;
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .social-linker-link {
+        flex: 1;
+        justify-content: center;
+        padding: 10px 5px;
+        border-bottom: none;
+        border-right: 1px solid $color-border;
+
+        &:last-child {
+            border-right: none;
+        }
+    }
+
+    .social-linker-label {
+        display: none;
+    }
+
+    .social-linker-icon,
+    .social-linker-link svg {
+        margin-right: 0;
+    }
+}
